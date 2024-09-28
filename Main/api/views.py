@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from django.http import JsonResponse
 import json
 import os
@@ -8,7 +8,8 @@ import os
 ARCHIVO_JSON = os.path.join(os.path.dirname(__file__), 'data.json')
 
 def index(req):
-    return render(req, 'index.html')
+    print(ARCHIVO_JSON)
+    return HttpResponse("API Index")
 
 def obtener_usuarios(req):
     # si existe el archivo

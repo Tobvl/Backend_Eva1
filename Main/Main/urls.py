@@ -26,5 +26,5 @@ urlpatterns = [
     # api app
     path('api/', include('api.urls')),
     # frontend app
-    #path('', include('frontend.urls')),
+    path('', include('frontend.urls')),
 ]

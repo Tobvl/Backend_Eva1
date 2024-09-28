@@ -1,8 +1,0 @@
-{
-    "nombre": "john doe",
-    "edad": 30,
-    "correo": "jdoe@google.com",
-    "activo": true,
-    "usuario": "jdoe",
-    "contrasena": "123456"
-}
