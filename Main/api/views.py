@@ -7,7 +7,10 @@ import os
 
 ARCHIVO_JSON = os.path.join(os.path.dirname(__file__), 'data.json')
 
-def obtener_usuario(req):
+def index(req):
+    return render(req, 'index.html')
+
+def obtener_usuarios(req):
     # si existe el archivo
     if os.path.exists(ARCHIVO_JSON):
         # abrir el archivo como lectura
@@ -19,4 +22,9 @@ def obtener_usuario(req):
     # retornar los datos en formato json
     return JsonResponse(datos, safe=False)
 
+def registrar_usuario(req):
+    if req.method == "POST":
+        ...
+        # return render(req, 'registro_exitoso.html')
+    #return render(req, 'registrar_usuario.html')
 

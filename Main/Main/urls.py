@@ -15,16 +15,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 # importar vistas de la app api y frontend
-from api.views import obtener_usuario
+import api.views as api_views
 #from frontend.views import formulario <- o la vista necesaria
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # api app
-    path('api/obtener_usuario', obtener_usuario),
+    path('api/', include('api.urls')),
     # frontend app
-    #path('', formulario),
+    #path('', include('frontend.urls')),
 ]
