@@ -11,6 +11,7 @@ def index(req):
     print(ARCHIVO_JSON)
     return HttpResponse("API Index")
 
+# función que devuelve json de los usuarios registrados
 def obtener_usuarios(req):
     # si existe el archivo
     if os.path.exists(ARCHIVO_JSON):
@@ -23,6 +24,7 @@ def obtener_usuarios(req):
     # retornar los datos en formato json
     return JsonResponse(datos, safe=False)
 
+# función que registra un usuario entregado por POST (en el body)
 def registrar_usuario(req):
     if req.method == "POST":
         ...
