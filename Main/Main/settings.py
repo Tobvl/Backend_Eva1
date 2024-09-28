@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Add the API app to the list of installed apps
+    'api',
 ]
 
 MIDDLEWARE = [
