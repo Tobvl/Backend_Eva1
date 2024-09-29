@@ -3,21 +3,17 @@
         [
             {
                 "id": 1,
-                "nombre": "john doe",
-                "edad": 30,
-                "correo": "jdoe@google.com",
-                "activo": true,
                 "usuario": "jdoe",
-                "contrasena": "123456"
+                "correo": "jdoe@google.com",
+                "contrasena": "12345678",
+                "activo": true
             },
             {
                 "id": 2,
-                "nombre": "john doe 2",
-                "edad": 32,
-                "correo": "jdoe2@google.com",
-                "activo": true,
-                "usuario": "jdoe2",
-                "contrasena": "123456"
+                "usuario": "jdoe1",
+                "correo": "jdoe@google.com",
+                "contrasena": "12345678",
+                "activo": true
             }
         ]
     ]

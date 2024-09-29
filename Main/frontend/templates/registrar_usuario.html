@@ -20,11 +20,11 @@
         <main class="main-register">
             <div class="register-form">
                 <h2>Crear cuenta</h2>
-                <form>
-                    <input type="text" placeholder="Nombre de usuario" required>
-                    <input type="email" placeholder="Correo electrónico" required>
-                    <input type="password" placeholder="Contraseña" required>
-                    <input type="password" placeholder="Confirma tu contraseña" required>
+                <form id="formRegistro" action="/api/registrar/">
+                    <input id="usernameInput" name="username" type="text" placeholder="Nombre de usuario" required>
+                    <input id="emailInput" name="email" type="email" placeholder="Correo electrónico" required>
+                    <input id="passwordInput" name="password" type="password" placeholder="Contraseña" required>
+                    <input id="confirmpasswordInput" name="confirmpassword" type="password" placeholder="Confirma tu contraseña" required>
                     <input type="submit" value="Continuar">
                 </form>
                 <div class="form-footer">
@@ -35,4 +35,5 @@
 
     </div>
 </body>
+<script src="{% static 'js/script.js' %}"></script>
 </html>
