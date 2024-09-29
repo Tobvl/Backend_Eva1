@@ -3,7 +3,7 @@ from django.shortcuts import render, HttpResponse
 # Create your views here.
 
 def index(req):
-    return HttpResponse("Frontend Index")
+    return render(req, 'index.html')
 
 # Formulario de registro
 def form_registrar(req):
@@ -12,3 +12,8 @@ def form_registrar(req):
 # Formulario de login
 def form_login(req):
     return render(req, 'login.html')
+
+# Vista del perfil
+def perfil(req):
+    return render(req, 'perfil.html')
+

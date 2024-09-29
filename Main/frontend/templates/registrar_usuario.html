@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body >
+    <div class="container container-register">
+
+        <nav>
+            <a class="home" href="{% url 'index' %}">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+            </a>
+        </nav>
+        
+        <main class="main-register">
+            <div class="register-form">
+                <h2>Crear cuenta</h2>
+                <form>
+                    <input type="text" placeholder="Nombre de usuario" required>
+                    <input type="email" placeholder="Correo electrónico" required>
+                    <input type="password" placeholder="Contraseña" required>
+                    <input type="submit" value="Continuar">
+                </form>
+                <div class="form-footer">
+                    <p>¿Ya tienes cuenta? <a href="{% url 'login' %}">Inicia sesión aquí</a></p>
+                </div>
+            </div>
+        </main>
+
+    </div>
+</body>
+</html>

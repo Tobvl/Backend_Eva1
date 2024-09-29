@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+
+        <nav>
+            <a class="home" href="{% url 'index' %}">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
+            </a>
+            <ul>
+                <a class="login" href="{% url 'login' %}">Inicia sesión</a>
+                <a class="register" href="{% url 'registrar_usuario' %}">Regístrate</a>
+            </ul>
+        </nav>
+
+        <main class="main-home">
+            <h1>ENCUENTRA TU PRÓXIMA <br><span>AVENTURA.</span></h1>
+        </main>
+        
+    </div>
+</body>
+</html>
