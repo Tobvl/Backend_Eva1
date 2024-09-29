@@ -1,0 +1,6 @@
+TODO:
+- Validar existencia de usuario en JSON con fetch(/api/usuarios/) en script.js
+- Después del registro, mostrar template de registro exitoso (con redirect('registro_exitoso'))
+- Crear vista de registro exitoso y añadir a urlpatterns con name='registro_exitoso'
+- Bloquear cuenta al 3er intento
+- Añadir intentos en el json al haber una contraseña incorrecta (desde view registrar usuario en la api)
