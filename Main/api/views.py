@@ -28,6 +28,7 @@ def obtener_usuarios(req):
     return JsonResponse(datos, safe=False)
 
 # función que registra un usuario entregado por POST (en el body)
+@csrf_exempt
 def registrar_usuario(req):
     if req.method == "POST":
         req_usuario = req.POST.get('username')
@@ -73,6 +74,7 @@ def login_usuario(req):
             return redirect('frontend:form_login')
         
         intento_login = login(req_email, req_password)
+        # intento_login = (usuario, clave_correcta)
         usuario = intento_login[0]
         clave_correcta = intento_login[1]
 
@@ -96,6 +98,7 @@ def login_usuario(req):
         req.session['siguiendo'] = usuario['siguiendo']
         
         return redirect('frontend:perfil')
+    
     return redirect('frontend:form_login')
 
 # función para cerrar sesión

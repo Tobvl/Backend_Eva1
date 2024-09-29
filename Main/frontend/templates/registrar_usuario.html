@@ -12,6 +12,7 @@
             <div class="register-form">
                 <h2>Crear cuenta</h2>
                 <form id="formRegistro" method="post" action="/api/registrar/">
+                    
                     {% if messages %}
                         {% for message in messages %}
                             <h4 style="color:firebrick">Error: {{message}}</h1>

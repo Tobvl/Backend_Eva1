@@ -44,56 +44,56 @@ const validarRegistro = async (e) => {
     confirmpassword.focus()
     return
   }
-
+  formRegistro.submit()
   
   // Validar que el usuario y correo no existan en el JSON (base de datos)
   // > Buscar en el JSON (GET a /api/usuarios/) y obtener usuarios = data.usuarios
-  const usuarios = await buscarUsuarios()
-  try {
+  // const usuarios = await buscarUsuarios()
+  // try {
 
-    usuarios.forEach(user => {
-      if (user.username == username.value){
-        alert('Ese usuario ya se encuentra registrado')
-        username.focus()
-        throw new Error("Ese usuario ya se encuentra registrado");
-      }
-      if (user.email == email.value){
-        alert('Ese correo electrónico ya se encuentra registrado')
-        email.focus()
-        throw new Error("Ese correo electrónico ya se encuentra registrado!");
+  //   usuarios.forEach(user => {
+  //     if (user.username == username.value){
+  //       alert('Ese usuario ya se encuentra registrado')
+  //       username.focus()
+  //       throw new Error("Ese usuario ya se encuentra registrado");
+  //     }
+  //     if (user.email == email.value){
+  //       alert('Ese correo electrónico ya se encuentra registrado')
+  //       email.focus()
+  //       throw new Error("Ese correo electrónico ya se encuentra registrado!");
         
-      }
-    });
-  }catch (error){
-    console.log(error.message)
-    return
-  }
+  //     }
+  //   });
+  // }catch (error){
+  //   console.log(error.message)
+  //   return
+  // }
   
   // Enviar formulario (POST a /api/usuarios/)
-  formRegistro.submit(
-    fetch('/api/usuarios/', {
-      method: 'POST',
-      body: JSON.stringify({
-        username: username.value,
-        email: email.value,
-        password: password.value
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-  );
+  // formRegistro.submit(
+  //   fetch('/api/usuarios/', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       username: username.value,
+  //       email: email.value,
+  //       password: password.value
+  //     }),
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }
+  //   })
+  // );
 }
 
 
-const buscarUsuarios = async () => {
-  return fetch('/api/usuarios/')
-  .then(response => response.json())
-  .then(data => {
-    return data.usuarios
-  })
-  .catch(error => console.log(error))
-}
+// const buscarUsuarios = async () => {
+//   return fetch('/api/usuarios/')
+//   .then(response => response.json())
+//   .then(data => {
+//     return data.usuarios
+//   })
+//   .catch(error => console.log(error))
+// }
 
 const cerrarSesion = () => {
   console.log("Cerrando sesión");
@@ -105,5 +105,4 @@ if (formRegistro != null){
   console.log("Formulario de registro encontrado");
   // Agregar validarRegistro al evento onsubmit del formulario
   formRegistro.addEventListener('submit', validarRegistro);
-
 }
