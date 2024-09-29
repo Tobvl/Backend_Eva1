@@ -3,17 +3,19 @@
         [
             {
                 "id": 1,
-                "usuario": "jdoe",
-                "correo": "jdoe@google.com",
-                "contrasena": "12345678",
-                "activo": true
+                "username": "jdoe",
+                "email": "1@1.com",
+                "password": "12345678",
+                "active": true,
+                "login_attempts": 0
             },
             {
                 "id": 2,
-                "usuario": "jdoe1",
-                "correo": "jdoe@google.com",
-                "contrasena": "12345678",
-                "activo": true
+                "username": "jdoe1",
+                "email": "jdoe@google.com",
+                "password": "12345678",
+                "active": true,
+                "login_attempts": 0
             }
         ]
     ]
