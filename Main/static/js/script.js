@@ -3,7 +3,6 @@
  */
 console.log("Script cargado");
 const formRegistro = document.getElementById('formRegistro');
-const formLogin = document.getElementById('formLogin');
 
 // Validar formulario de registro
 const validarRegistro = async (e) => {
@@ -49,12 +48,7 @@ const validarRegistro = async (e) => {
   
   // Validar que el usuario y correo no existan en el JSON (base de datos)
   // > Buscar en el JSON (GET a /api/usuarios/) y obtener usuarios = data.usuarios
-  const usuarios = await fetch('/api/usuarios/')
-    .then(response => response.json())
-    .then(data => {
-      return data.usuarios[0]
-    })
-    .catch(error => console.log(error))
+  const usuarios = await buscarUsuarios()
   try {
 
     usuarios.forEach(user => {
@@ -75,8 +69,6 @@ const validarRegistro = async (e) => {
     return
   }
   
-  console.log(usuarios)
-  
   // Enviar formulario (POST a /api/usuarios/)
   formRegistro.submit(
     fetch('/api/usuarios/', {
@@ -93,8 +85,20 @@ const validarRegistro = async (e) => {
   );
 }
 
-const validarLogin = () => {
-  // Maneja el formulario de login
+
+const buscarUsuarios = async () => {
+  return fetch('/api/usuarios/')
+  .then(response => response.json())
+  .then(data => {
+    return data.usuarios
+  })
+  .catch(error => console.log(error))
+}
+
+const cerrarSesion = () => {
+  console.log("Cerrando sesión");
+  // redirigir a /api/usuarios/logout sin fetch
+  window.location.href = '/api/usuarios/logout'
 }
 
 if (formRegistro != null){
@@ -102,9 +106,4 @@ if (formRegistro != null){
   // Agregar validarRegistro al evento onsubmit del formulario
   formRegistro.addEventListener('submit', validarRegistro);
 
-}
-
-if (formLogin != null){
-  console.log("Formulario de login encontrado");
-  formLogin.onsubmit = validarLogin;
 }
