@@ -15,14 +15,13 @@
         <main class="main-perfil">
             <div class="perfil-info">
                 <img src="{% static 'images/avatar.png' %}" alt="Usuario" class="avatar">
-                <h2>{{usuario}}</h2>
+                <h2>Bienvenido(a) {{usuario}}</h2>
                 <p>{{correo}}</p>
                 <div class="perfil-stats">
                     <p>{{seguidores}} seguidores</p>
                     <p>Siguiendo a {{siguiendo}}</p>
                 </div>
                 <div class="perfil-buttons">
-                    <button>Editar perfil</button>
                     <button onclick="cerrarSesion()">Cerrar sesión</button>
                 </div>
             </div>
