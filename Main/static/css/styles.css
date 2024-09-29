@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Global */
+body {
+    font-family: 'League Spartan', sans-serif;
+    height: 100dvh;
+    background-image: url(../images/fondo.png);
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center 20%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.15); 
+}
+
+
+
+/* Navbar */
+nav {
+    padding-top: 2.5rem;
+    width: 100%;
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    z-index: 10; 
+    display: flex;
+}
+
+nav ul {
+    display: flex;
+    margin-inline-start: auto;
+    margin-right: 3rem;
+    list-style: none;
+    gap: 1rem;
+}
+
+nav ul a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: 0.3s;
+    border-radius: 32px; 
+    padding: 13px 24px 10px 24px;
+}
+
+nav .logo {
+    width: 6rem;
+    margin-left: 3rem;
+}
+
+nav a.login {
+    color: white;
+    background-color: #F07929;
+}
+
+nav a.register {
+    color: black;
+    border: 1px solid black;
+}
+
+nav a.login:hover {
+    background-color: #cc5e14;
+}
+
+nav a.register:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+
+
+/* Main */
+.main-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.main-home h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.main-home h1 span {
+    font-weight: 800;
+    font-size: 9.375rem;
+    letter-spacing: 0.7rem;
+    margin-top: 1rem;
+    display: block;
+}
+
+
+
+/* Login & Register */
+.main-login,
+.main-register {
+    background: rgba(255, 255, 255, 0.59);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    width: 50%;
+    height: 100%;
+    margin-inline-start: auto;
+
+}
+
+.login-form, 
+.register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login-form h2,
+.register-form h2 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 60%;
+    padding: 2rem;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+    font-size: 1rem;
+    width: 100%;
+}
+
+input[type="submit"] {
+    background-color: #F07929;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 600;
+}
+
+input[type="submit"]:hover {
+    background-color: #cc5e14;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.form-footer a {
+    text-decoration: none;
+    color: #7e3e13;
+}
+
+/* Perfil */
+.body-perfil {
+    background-color: white;  
+    background-image: none;  
+}
+
+
+.container-perfil {
+    display: flex;
+    justify-content: center;
+    padding-top: 6rem;
+    height: 100%;
+}
+
+.perfil-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.perfil-info h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.perfil-info p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.perfil-stats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.perfil-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.perfil-buttons button {
+    background-color: #e7e7e7;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 600;
+}
