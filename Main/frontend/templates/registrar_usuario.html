@@ -1,26 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}Registrar Usuario{% endblock title %}
+
+{% block body %}
 <body >
     <div class="container container-register">
-
-        <nav>
-            <a class="home" href="{% url 'index' %}">
-                <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo">
-            </a>
-        </nav>
+        
+        {% include "logo_nav.html" %}
         
         <main class="main-register">
             <div class="register-form">
                 <h2>Crear cuenta</h2>
-                <form id="formRegistro" action="/api/registrar/">
+                <form id="formRegistro" method="post" action="/api/registrar/">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <h4 style="color:firebrick">Error: {{message}}</h1>
+                        {% endfor %}
+                    {% endif %}
                     <input id="usernameInput" name="username" type="text" placeholder="Nombre de usuario" required>
                     <input id="emailInput" name="email" type="email" placeholder="Correo electrónico" required>
                     <input id="passwordInput" name="password" type="password" placeholder="Contraseña" required>
@@ -28,12 +24,11 @@
                     <input type="submit" value="Continuar">
                 </form>
                 <div class="form-footer">
-                    <p>¿Ya tienes cuenta? <a href="{% url 'login' %}">Inicia sesión aquí</a></p>
+                    <p>¿Ya tienes cuenta? <a href="{% url 'frontend:form_login' %}">Inicia sesión aquí</a></p>
                 </div>
             </div>
         </main>
-
+        
     </div>
 </body>
-<script src="{% static 'js/script.js' %}"></script>
-</html>
+{% endblock body %}
