@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}Mi Perfil{% endblock title %}
+
+{% block body %}
 <body class="body-perfil" >
     <div class="container-perfil">
 
         <nav>
-            <a class="home" href="{% url 'index' %}">
+            <a class="home" href="{% url 'frontend:index' %}">
                 <img src="{% static 'images/logo-color.png' %}" alt="Logo" class="logo">
             </a>
         </nav>
@@ -20,21 +15,20 @@
         <main class="main-perfil">
             <div class="perfil-info">
                 <img src="{% static 'images/avatar.png' %}" alt="Usuario" class="avatar">
-                <h2>Nombre de usuario</h2>
-                <p>Correo electrónico</p>
+                <h2>{{usuario}}</h2>
+                <p>{{correo}}</p>
                 <div class="perfil-stats">
-                    <p>0 seguidores</p>
-                    <p>Siguiendo a 0</p>
+                    <p>{{seguidores}} seguidores</p>
+                    <p>Siguiendo a {{siguiendo}}</p>
                 </div>
                 <div class="perfil-buttons">
                     <button>Editar perfil</button>
-                    <button>Cerrar sesión</button>
+                    <button onclick="cerrarSesion()">Cerrar sesión</button>
                 </div>
             </div>
         </main>
 
     </div>
 </body>
-
 <script src="https://kit.fontawesome.com/d85944cffc.js" crossorigin="anonymous"></script>
-</html>
+{% endblock body %}
